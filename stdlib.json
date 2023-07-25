@@ -1,0 +1,59 @@
+{
+  "name": "alhmady640/musicnev",
+  "timeout": 30000,
+  "connector": false,
+  "events": {
+    "functions/events/discord/message/create.js": {
+      "name": "discord.message.create"
+    },
+    "functions/events/discord/voice/state/update.js": {
+      "name": "discord.voice.state.update"
+    },
+    "functions/events/discord/bot/playback/finished.js": {
+      "name": "discord.bot.playback.finished"
+    },
+    "functions/events/discord/message/button/stop.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "stop"
+      }
+    },
+    "functions/events/discord/message/button/play_pause.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "play_pause"
+      }
+    },
+    "functions/events/discord/message/button/skip.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "skip"
+      }
+    },
+    "functions/events/discord/message/button/loop.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "loop"
+      }
+    },
+    "functions/events/discord/message/button/fix.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "fix"
+      }
+    },
+    "functions/events/autocode/self/deployed.js": {
+      "name": "autocode.self.deployed"
+    }
+  },
+  "env": [
+    {
+      "name": "Key",
+      "description": "Some secret key for database, example: music2121"
+    },
+    {
+      "name": "PLAYLIST_LIMIT",
+      "description": "how many song it can add from playlist (default: 20)"
+    }
+  ]
+}
